@@ -1,5 +1,6 @@
 package it.polito.tdp.artsmia;
 
+import it.polito.tdp.artsmia.model.Model;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -19,7 +20,8 @@ public class Main extends Application {
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
-
+			Model model= new Model();
+			controller.setModel(model);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
