@@ -26,7 +26,7 @@ public class ArtsmiaDAO {
 			while (res.next()) {
 				//non voglio crearlo sempre, solo quando serve 
 				
-				if(idMap.get(res.getInt("object_id"))!=null) {
+				if(idMap.get(res.getInt("object_id"))==null) {
 				ArtObject artObj = new ArtObject(res.getInt("object_id"), res.getString("classification"), res.getString("continent"), 
 						res.getString("country"), res.getInt("curator_approved"), res.getString("dated"), res.getString("department"), 
 						res.getString("medium"), res.getString("nationality"), res.getString("object_name"), res.getInt("restricted"), 

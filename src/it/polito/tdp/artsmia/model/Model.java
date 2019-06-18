@@ -16,9 +16,11 @@ import it.polito.tdp.artsmia.db.ArtsmiaDAO;
 public class Model {
 	private Graph<ArtObject, DefaultWeightedEdge> graph;
 	private Map<Integer, ArtObject> idMap;
-	public void Model() {
-		idMap= new HashMap<>();
-		graph= new SimpleWeightedGraph(DefaultWeightedEdge.class);
+	
+
+	public  Model() {
+		idMap = new HashMap<Integer,ArtObject>();
+		graph = new SimpleWeightedGraph<>(DefaultWeightedEdge.class);
 	}
 	//agganciato al controllore
 	 public void creaGrafo() {
@@ -39,12 +41,16 @@ public class Model {
 			 ArtObject dest= idMap.get(a.getO2());
 			 
 			 Graphs.addEdge(graph, source, dest, a.getPeso());
+			
 			 }
 		 
 		
 		 System.out.println("Grafo creato: "+ graph.vertexSet().size()+"\ncon archi: "+ graph.edgeSet().size());
 		 
 	 }
+
+		
+
 	 public int getVertexSize() {
 			return graph.vertexSet().size();
 		}
